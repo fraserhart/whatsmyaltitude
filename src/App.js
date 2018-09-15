@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Altitude from './Altitude';
 
 class App extends Component {
+
+  getPosition() {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  }
+
+  getCurrentAltitude() {
+    this.getPosition()
+      .then((position) => {
+        console.log(position);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">What&rsquo;s my altitude?</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <button onClick={this.getCurrentAltitude.bind(this)}>Get my altitude</button>
+        <Altitude />
       </div>
     );
   }
