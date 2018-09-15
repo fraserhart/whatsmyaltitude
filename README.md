@@ -1,9 +1,11 @@
-### add your Google maps api key
+### add your Google maps and analytics api keys
 create a .env file in the route directory with:
  
-```REACT_APP_GOOGLE_API_KEY = "YOUR API KEY"
- REACT_APP_GOOGLE_ANALYTICS_ID = "UA-XXXXXXX-1"
 ```
+REACT_APP_GOOGLE_API_KEY = "YOUR API KEY"
+REACT_APP_GOOGLE_ANALYTICS_ID = "UA-XXXXXXX-1" 
+```
+
 ### dev
 `npm start`
 
