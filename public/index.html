@@ -7,12 +7,21 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <title>What&rsquo;s my Altitude?</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWakBthDNnxjUbA3uiJceZlMHPEN6SubE"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=%REACT_APP_GOOGLE_API_KEY%"></script>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GOOGLE_ANALYTICS_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125806196-1');
+    </script>
+
   </body>
 </html>
