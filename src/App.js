@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Altitude from './Altitude';
-import { ERROR_GETTING_LOCATION, WAITING_FOR_LOCATION } from './Constants';
+import { ERROR_GETTING_LOCATION, REFUSED, WAITING_FOR_LOCATION, WAITING_FOR_ELEVATION_DATA } from './Constants';
 
 class App extends Component {
 
@@ -23,6 +23,7 @@ class App extends Component {
   getCurrentAltitude() {
     this.getPosition()
       .then((position) => {
+        this.setState({ elevation: WAITING_FOR_ELEVATION_DATA });
         const elevator = new window.google.maps.ElevationService();
         elevator.getElevationForLocations({
           locations: [
@@ -32,7 +33,13 @@ class App extends Component {
             },
           ],
         }, (elevations) => {
-          this.setState({ elevation: elevations[0].elevation });
+          if (elevations && elevations[0]){
+            this.setState({ elevation: elevations[0].elevation });
+          } else {
+            this.setState({ elevation: REFUSED });
+            console.error('ERROR', elevations);
+          }
+
         });
       })
       .catch((error) => {
