@@ -21,3 +21,6 @@ After installing and setting up aws cli (see: https://docs.aws.amazon.com/cli/la
 `npm run build && aws s3 sync build/ s3://whatsmyaltitude.fraser-hart.co.uk`
 
 (replace whatsmyaltitude.fraser-hart.co.uk with your S3 bucket name)
+
+### demo
+https://whatsmyaltitude.fraser-hart.co.uk
