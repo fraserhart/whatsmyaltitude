@@ -23,4 +23,4 @@ After installing and setting up aws cli (see: https://docs.aws.amazon.com/cli/la
 (replace whatsmyaltitude.fraser-hart.co.uk with your S3 bucket name)
 
 ### demo
-https://whatsmyaltitude.fraser-hart.co.uk
+[check out the demo at whatsmyaltitude.fraser-hart.co.uk](https://whatsmyaltitude.fraser-hart.co.uk)
